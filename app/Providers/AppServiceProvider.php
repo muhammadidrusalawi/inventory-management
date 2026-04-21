@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\DB;
@@ -32,5 +33,7 @@ class AppServiceProvider extends ServiceProvider
 
             return $hasPermission ? true : null;
         });
+
+        Paginator::useTailwind();
     }
 }
